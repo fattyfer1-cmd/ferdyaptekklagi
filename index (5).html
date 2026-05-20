@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI untuk Ekonomi Inklusif Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">AI for SDGs</div>
+    <nav>
+      <a href="#about">Tentang AI</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#regional">Regional</a>
+      <a href="#news">Berita</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">🌙</button>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <p class="subtitle">by Ferdy Ardhitya Nugraha</p>
+      <h1>AI untuk Ekonomi Inklusif Indonesia</h1>
+      <div class="typing-text" id="typingText"><span class="cursor"></span></div>
+      <a href="#about" class="btn-cta">🚀 Pelajari Lebih Lanjut</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-section">
+    <div class="stat-card" data-tooltip="OJK SNLIK 2024">
+      <div class="stat-icon">📊</div>
+      <div class="stat-value" data-target="75.6" data-suffix="%">0%</div>
+      <div class="stat-label">Inklusi Keuangan 2024</div>
+    </div>
+    <div class="stat-card" data-tooltip="Kemenkop UKM">
+      <div class="stat-icon">🏪</div>
+      <div class="stat-value" data-target="64.8" data-suffix=" Juta">0</div>
+      <div class="stat-label">UMKM di Indonesia</div>
+    </div>
+    <div class="stat-card" data-tooltip="Bank Indonesia 2024">
+      <div class="stat-icon">📱</div>
+      <div class="stat-value" data-target="49" data-suffix=" Juta">0</div>
+      <div class="stat-label">Pengguna QRIS</div>
+    </div>
+    <div class="stat-card" data-tooltip="Komdigi IMDI 2025">
+      <div class="stat-icon">💡</div>
+      <div class="stat-value" data-target="44.53" data-suffix="">0</div>
+      <div class="stat-label">Indeks Literasi Digital 2025</div>
+    </div>
+  </div>
+
+  <!-- ABOUT / FEATURES -->
+  <section id="about">
+    <h2 class="section-title">Peran AI dalam Ekonomi Inklusif</h2>
+    <p class="section-subtitle">Kecerdasan buatan membuka peluang baru untuk menjangkau masyarakat yang belum terlayani sistem keuangan tradisional.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🏦</div>
+        <h3>Inklusi Keuangan Digital</h3>
+        <p>AI memungkinkan credit scoring alternatif, membuka akses pinjaman bagi masyarakat unbanked melalui analisis data non-tradisional.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏪</div>
+        <h3>Pemberdayaan UMKM</h3>
+        <p>Chatbot AI, analitik penjualan, dan otomatisasi pemasaran membantu UMKM bersaing di era digital tanpa biaya tinggi.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Pengentasan Kemiskinan</h3>
+        <p>Prediksi berbasis AI membantu pemerintah menyalurkan bantuan sosial secara tepat sasaran dan efisien.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📡</div>
+        <h3>Pemerataan Akses Digital</h3>
+        <p>AI mendorong optimasi infrastruktur telekomunikasi di daerah 3T untuk mengurangi kesenjangan digital.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎓</div>
+        <h3>Literasi Keuangan Digital</h3>
+        <p>Personalisasi edukasi keuangan melalui AI membantu masyarakat memahami produk & layanan keuangan.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌾</div>
+        <h3>Pertanian & Perikanan Cerdas</h3>
+        <p>AI membantu prediksi cuaca, optimasi harga pasar, dan rantai pasok untuk petani & nelayan kecil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD with TABS -->
+  <section id="dashboard">
+    <h2 class="section-title">Dashboard Data</h2>
+    <p class="section-subtitle">Visualisasi indikator inklusi keuangan dan perkembangan ekonomi digital Indonesia.</p>
+    
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="tab-nasional">📈 Data Nasional</button>
+      <button class="tab-btn" data-tab="tab-digital">💳 Pembayaran Digital</button>
+      <button class="tab-btn" data-tab="tab-umkm">🏪 UMKM & KUR</button>
+    </div>
+
+    <!-- Tab: Nasional -->
+    <div class="tab-content active" id="tab-nasional">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Pertumbuhan Inklusi Keuangan</h4>
+            <p class="chart-source">Sumber: OJK SNLIK 2016–2024</p>
+            <canvas id="chartInklusi"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Penetrasi Internet Indonesia</h4>
+            <p class="chart-source">Sumber: APJII & Literasi Digital 2024</p>
+            <canvas id="chartInternet"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Digital -->
+    <div class="tab-content" id="tab-digital">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Adopsi Pembayaran Digital (QRIS)</h4>
+            <p class="chart-source">Sumber: Bank Indonesia 2024</p>
+            <canvas id="chartQRIS"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Indeks Literasi Digital Indonesia</h4>
+            <p class="chart-source">Sumber: Komdigi IMDI 2021–2025</p>
+            <canvas id="chartLiterasi"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: UMKM -->
+    <div class="tab-content" id="tab-umkm">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Pertumbuhan UMKM Digital</h4>
+            <p class="chart-source">Sumber: Kemenkeu — Digitalisasi UMKM 2024</p>
+            <canvas id="chartUMKM"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Penyaluran KUR untuk UMKM (Triliun Rp)</h4>
+            <p class="chart-source">Sumber: Kemenkeu 2024</p>
+            <canvas id="chartKUR"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGIONAL DATA with TABS -->
+  <section id="regional">
+    <h2 class="section-title">Data Regional per Pulau / Provinsi</h2>
+    <p class="section-subtitle">Perbandingan indikator ekonomi inklusif dan digital antar wilayah Indonesia.</p>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="tab-reg-inklusi">🏦 Inklusi & Internet</button>
+      <button class="tab-btn" data-tab="tab-reg-umkm">🏪 UMKM & QRIS</button>
+      <button class="tab-btn" data-tab="tab-reg-literasi">📚 Literasi & KUR</button>
+    </div>
+
+    <div class="tab-content active" id="tab-reg-inklusi">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Inklusi Keuangan per Pulau (%)</h4>
+            <p class="chart-source">Sumber: OJK SNLIK 2024</p>
+            <canvas id="chartRegionalInklusi"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Penetrasi Internet per Pulau (%)</h4>
+            <p class="chart-source">Sumber: APJII 2024</p>
+            <canvas id="chartRegionalInternet"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-reg-umkm">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Jumlah UMKM per Pulau (Juta)</h4>
+            <p class="chart-source">Sumber: Kemenkeu & Kemenkop 2024</p>
+            <canvas id="chartRegionalUMKM"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Adopsi QRIS per Provinsi (Top 10)</h4>
+            <p class="chart-source">Sumber: Bank Indonesia 2024</p>
+            <canvas id="chartRegionalQRIS"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-reg-literasi">
+      <div class="dashboard-section">
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Literasi Digital per Pulau (Indeks)</h4>
+            <p class="chart-source">Sumber: Komdigi IMDI 2025</p>
+            <canvas id="chartRegionalLiterasi"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Penyaluran KUR per Provinsi (Top 10, Triliun Rp)</h4>
+            <p class="chart-source">Sumber: Kemenkeu 2024</p>
+            <canvas id="chartRegionalKUR"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <h2 class="section-title">Berita Terkini</h2>
+    <p class="section-subtitle">Perkembangan terbaru seputar ekonomi inklusif, digitalisasi, dan AI di Indonesia.</p>
+    <div class="news-grid">
+      <div class="news-card">
+        <p class="news-source">Bank Indonesia</p>
+        <h4>Siaran Pers BI: Pembayaran Lintas Negara</h4>
+        <a href="https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2610824.aspx" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">Bank Indonesia</p>
+        <h4>QRIS Cross-Border: Digitalisasi Pembayaran Antarnegara</h4>
+        <a href="https://www.bi.go.id/id/edukasi/Documents/QRIS-Cross-Border.pdf" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">OJK</p>
+        <h4>Survei Nasional Literasi dan Inklusi Keuangan (SNLIK) 2024</h4>
+        <a href="https://ojk.go.id/id/berita-dan-kegiatan/info-terkini/Pages/Survei-Nasional-Literasi-dan-Inklusi-Keuangan-Tahun-2024.aspx" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">OJK</p>
+        <h4>Indeks Inklusi Keuangan Meningkat</h4>
+        <a href="https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/Indeks-Inklusi-Keuangan-Meningkat,-OJK-Terus-Dorong-Perluasan-Akses-Keuangan-Masyarakat.aspx" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">Kemenkeu</p>
+        <h4>Pemerintah Terus Dorong Digitalisasi pada UMKM</h4>
+        <a href="https://www.kemenkeu.go.id/informasi-publik/publikasi/berita-utama/pemerintah-terus-dorong-digitalisasi-pada-umkm" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">Kemenkeu</p>
+        <h4>Pengembangan UMKM Dorong Pertumbuhan Ekonomi</h4>
+        <a href="https://djpb.kemenkeu.go.id/direktorat/pkn/id/berita/nasional/4034-pengembangan-umkm-dorong-pertumbuhan-ekonomi.html" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">AI & UMKM</p>
+        <h4>AI Dorong Efisiensi dan Pertumbuhan UMKM di Tahun 2025</h4>
+        <a href="https://umkm.kompas.com/read/2025/01/13/070000783/ai-dorong-efisiensi-dan-pertumbuhan-umkm-di-tahun-2025" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">Komdigi</p>
+        <h4>IMDI 2025 Naik ke 44,53 — Indonesia Makin Cakap Digital</h4>
+        <a href="https://aptika.kominfo.go.id/2025/02/imdi-2025-naik-ke-4453-indonesia-makin-cakap-digital/" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+      <div class="news-card">
+        <p class="news-source">Komdigi</p>
+        <h4>Program Literasi Digital Indonesia</h4>
+        <a href="https://literasidigital.id/" class="news-link" target="_blank">Baca selengkapnya →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <h2 class="section-title">Uji Pemahamanmu</h2>
+    <p class="section-subtitle">Seberapa dalam pengetahuanmu tentang ekonomi inklusif dan digital Indonesia?</p>
+    <div id="quizContainer"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>AI for SDGs — Ekonomi Inklusif</h4>
+        <p>Website interaktif yang menampilkan peran kecerdasan buatan dalam mendorong ekonomi inklusif di Indonesia.</p>
+        <div class="sdg-badges" style="margin-top:1rem;">
+          <span>SDG #1 No Poverty</span>
+          <span>SDG #8 Decent Work</span>
+          <span>SDG #10 Reduced Inequalities</span>
+        </div>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <p><a href="#about">Tentang AI</a></p>
+        <p><a href="#dashboard">Dashboard Data</a></p>
+        <p><a href="#regional">Data Regional</a></p>
+        <p><a href="#news">Berita</a></p>
+        <p><a href="#quiz">Quiz Interaktif</a></p>
+      </div>
+      <div>
+        <h4>Sumber Data</h4>
+        <p><a href="https://www.bi.go.id" target="_blank">Bank Indonesia</a></p>
+        <p><a href="https://ojk.go.id" target="_blank">OJK (Otoritas Jasa Keuangan)</a></p>
+        <p><a href="https://www.bps.go.id" target="_blank">BPS (Badan Pusat Statistik)</a></p>
+        <p><a href="https://kemenkopukm.go.id" target="_blank">Kemenkop UKM</a></p>
+        <p><a href="https://literasidigital.id" target="_blank">Komdigi Literasi Digital</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AI for SDGs — Ekonomi Inklusif Indonesia | Open Source Project | MIT License</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" title="Kembali ke atas">↑</button>
+
+  <!-- CHATBOT -->
+  <button class="chatbot-toggle" id="chatToggle">🤖</button>
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chatbot-header">🤖 AI Assistant — Ekonomi Inklusif</div>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="msg bot">Halo! Saya asisten AI. Tanyakan tentang inklusi keuangan, QRIS, UMKM, literasi digital, atau topik lainnya! 🇮🇩</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatInput" placeholder="Ketik pertanyaan...">
+      <button id="chatSend">Kirim</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
